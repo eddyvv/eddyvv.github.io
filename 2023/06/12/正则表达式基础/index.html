@@ -16,21 +16,22 @@
   <meta name="author" content="Eddy">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="正则表达式是一种用于匹配和操作文本的强大工具，它是由一系列字符和特殊字符组成的模式，用于描述要匹配的文本模式。 正则表达式可以在文本中查找、替换、提取和验证特定的模式。 命令行展开1234567eddy@DESKTOP-KTLF3P4:~$ echo ls&amp;#123;0..20&amp;#125;ls0 ls1 ls2 ls3 ls4 ls5 ls6 ls7 ls8 ls9 ls10 ls11 ls12">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2023/05/31/hello-world/index.html">
+<meta property="og:title" content="正则表达式基础">
+<meta property="og:url" content="http://example.com/2023/06/12/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="正则表达式是一种用于匹配和操作文本的强大工具，它是由一系列字符和特殊字符组成的模式，用于描述要匹配的文本模式。 正则表达式可以在文本中查找、替换、提取和验证特定的模式。 命令行展开1234567eddy@DESKTOP-KTLF3P4:~$ echo ls&amp;#123;0..20&amp;#125;ls0 ls1 ls2 ls3 ls4 ls5 ls6 ls7 ls8 ls9 ls10 ls11 ls12">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-05-31T07:17:06.898Z">
-<meta property="article:modified_time" content="2023-05-31T07:13:23.272Z">
+<meta property="article:published_time" content="2023-06-12T11:45:55.000Z">
+<meta property="article:modified_time" content="2023-06-12T11:59:03.726Z">
 <meta property="article:author" content="Eddy">
+<meta property="article:tag" content="正则表达式">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Hello World - Hexo</title>
+  <title>正则表达式基础 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text="正则表达式基础"></span>
           
         </div>
 
@@ -207,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-31 15:17" pubdate>
-          2023年5月31日 下午
+        <time datetime="2023-06-12 19:45" pubdate>
+          2023年6月12日 晚上
         </time>
       </span>
     
@@ -219,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          367 字
+          1.4k 字
         
       </span>
     
@@ -230,7 +231,7 @@
         
         
         
-          4 分钟
+          12 分钟
         
       </span>
     
@@ -268,24 +269,143 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hello World</h1>
+            <h1 style="display: none">正则表达式基础</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+                <p><strong>正则表达式</strong>是一种用于匹配和操作文本的强大工具，它是由一系列字符和特殊字符组成的模式，用于描述要匹配的文本模式。</p>
+<p>正则表达式可以在文本中查找、替换、提取和验证特定的模式。</p>
+<h3 id="命令行展开"><a href="#命令行展开" class="headerlink" title="命令行展开"></a>命令行展开</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">eddy@DESKTOP-KTLF3P4:~$ <span class="hljs-built_in">echo</span> <span class="hljs-built_in">ls</span>&#123;0..20&#125;<br>ls0 ls1 ls2 ls3 ls4 ls5 ls6 ls7 ls8 ls9 ls10 ls11 ls12 ls13 ls14 ls15 ls16 ls17 ls18 ls19 ls20<br>eddy@DESKTOP-KTLF3P4:~$ <span class="hljs-built_in">echo</span> <span class="hljs-built_in">pwd</span>&#123;1..20..2&#125;<br>pwd1 pwd3 pwd5 pwd7 pwd9 pwd11 pwd13 pwd15 pwd17 pwd19<br>eddy@DESKTOP-KTLF3P4:~$ <span class="hljs-built_in">echo</span> <span class="hljs-built_in">pwd</span>&#123;01..20..2&#125;<br>pwd01 pwd03 pwd05 pwd07 pwd09 pwd11 pwd13 pwd15 pwd17 pwd19<br>eddy@DESKTOP-KTLF3P4:~$<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+<h3 id="命令别名"><a href="#命令别名" class="headerlink" title="命令别名"></a>命令别名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">alias</span>, <span class="hljs-built_in">unalias</span><br>eddy@DESKTOP-KTLF3P4:~$ <span class="hljs-built_in">alias</span> <span class="hljs-built_in">rm</span>=<span class="hljs-string">&#x27;rm -i&#x27;</span><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+<h3 id="命令历史"><a href="#命令历史" class="headerlink" title="命令历史"></a>命令历史</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">history</span><br>!&lt;行号&gt;  <span class="hljs-comment">#执行history中第&lt;&gt;条命令</span><br>!! <span class="hljs-comment">#执行上次命令</span><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+<h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">ctrl + a	<span class="hljs-comment">#移动到命令行首</span><br>ctrl + e	<span class="hljs-comment">#移动到命令行尾</span><br>ctrl + k	<span class="hljs-comment">#删除光标后的字符</span><br>ctrl + u	<span class="hljs-comment">#删除光标前的内容</span><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="查询命令位置"><a href="#查询命令位置" class="headerlink" title="查询命令位置"></a>查询命令位置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">which</span> <span class="hljs-built_in">ls</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="Linux正则表达式（Regular-Expression，REGEXP）"><a href="#Linux正则表达式（Regular-Expression，REGEXP）" class="headerlink" title="Linux正则表达式（Regular Expression，REGEXP）"></a>Linux正则表达式（Regular Expression，REGEXP）</h1><ul>
+<li>grep：文本过滤工具，（模式：pattern）</li>
+<li>sed：stream editor，流编辑器；文本编辑器</li>
+<li>awk：Linux的文本报告生成器（格式化文本），Linux中是gawk</li>
+</ul>
+<h2 id="正则表达式的分类"><a href="#正则表达式的分类" class="headerlink" title="正则表达式的分类"></a>正则表达式的分类</h2><ul>
+<li>基本正则表达式（BRE，basic regular exporession）</li>
+</ul>
+<blockquote>
+<p>BRE对应的字符有 ^ $ . [] *</p>
+</blockquote>
+<ul>
+<li>扩展正则表达式（ERE，extended regular expression）</li>
+</ul>
+<blockquote>
+<p>ERE在BRE的基础上增加 () {} ? + | 等字符</p>
+</blockquote>
+<h3 id="基本正则表达式BRE集合"><a href="#基本正则表达式BRE集合" class="headerlink" title="基本正则表达式BRE集合"></a>基本正则表达式BRE集合</h3><ul>
+<li>匹配字符</li>
+<li>匹配次数</li>
+<li>位置锚定</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>^</td>
+<td>尖角号，用于模式的最左侧，如”^oldboy”，匹配oldboy单词开头的行</td>
+</tr>
+<tr>
+<td>$</td>
+<td>美元符，用于模式的最右侧，如”oldboy$”，表示以oldboy单词结尾的行</td>
+</tr>
+<tr>
+<td>^$</td>
+<td>组合符，表示空行</td>
+</tr>
+<tr>
+<td>.</td>
+<td>匹配任意一个有且只有一个字符，不能匹配空行</td>
+</tr>
+<tr>
+<td>\</td>
+<td>转义字符，让特殊含义的字符还原本意，例如<code>\.</code>表示小数点</td>
+</tr>
+<tr>
+<td>*</td>
+<td>匹配前一个字符（连续出现）0次或1次以上，重复0次代表空，即匹配所有内容</td>
+</tr>
+<tr>
+<td>.*</td>
+<td>组合符，匹配所有内容</td>
+</tr>
+<tr>
+<td>^.*</td>
+<td>组合符，匹配任意多个字符开头的内容</td>
+</tr>
+<tr>
+<td>.*$</td>
+<td>组合符，匹配任意多个字符结尾的内容</td>
+</tr>
+<tr>
+<td>[abc]</td>
+<td>匹配[]内的任意一个字符，a或b或c，可以写为[a-c]</td>
+</tr>
+<tr>
+<td>[^abc]</td>
+<td>匹配除了^后面的任意字符，a或b或c，^表示对[abc]的取反</td>
+</tr>
+</tbody></table>
+<h3 id="扩展正则表达式ERE集合"><a href="#扩展正则表达式ERE集合" class="headerlink" title="扩展正则表达式ERE集合"></a>扩展正则表达式ERE集合</h3><p>扩展正则表达式必须用<code>grep -E</code>才能生效</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>匹配前一个字符一次或多次</td>
+</tr>
+<tr>
+<td>[:&#x2F;]+</td>
+<td>匹配<code>[]</code>内的”:”或者”&#x2F;“字符一次或多次</td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配前一个字符0次或一次</td>
+</tr>
+<tr>
+<td>|</td>
+<td>表示<code>或</code>，同时过滤多个字符串</td>
+</tr>
+<tr>
+<td>()</td>
+<td>分组过滤，被括起来的内容表示一个整体</td>
+</tr>
+<tr>
+<td>a{n,m}</td>
+<td>匹配前一个字符最少<code>n</code>次，最多<code>m</code>次</td>
+</tr>
+<tr>
+<td>a{n,}</td>
+<td>匹配前一个字符最少n次</td>
+</tr>
+<tr>
+<td>a{n}</td>
+<td>匹配前一个字符正好n次</td>
+</tr>
+<tr>
+<td>a{,m}</td>
+<td>匹配前一个字符最多m次</td>
+</tr>
+</tbody></table>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://tool.oschina.net/uploads/apidocs/jquery/regexp.html">表达式全集</a></p>
 
                 
               </div>
@@ -295,6 +415,13 @@
               <div class="post-metas my-3">
   
   
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">#正则表达式</a>
+      
+    </div>
+  
 </div>
 
 
@@ -303,8 +430,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello World</div>
-      <div>http://example.com/2023/05/31/hello-world/</div>
+      <div>正则表达式基础</div>
+      <div>http://example.com/2023/06/12/正则表达式基础/</div>
     </div>
     <div class="license-meta">
       
@@ -316,7 +443,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年5月31日</div>
+          <div>2023年6月12日</div>
         </div>
       
       
@@ -348,15 +475,21 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/06/12/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80/" title="正则表达式基础">
+                      <a href="/2023/06/12/PetaLinux%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" title="PetaLinux常用操作">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">正则表达式基础</span>
+                        <span class="hidden-mobile">PetaLinux常用操作</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2023/05/31/hello-world/" title="Hello World">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
