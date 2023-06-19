@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>Windows Terminal添加至鼠标右键</title>
+    <link href="/2023/06/19/Windows%20Terminal%E6%B7%BB%E5%8A%A0%E8%87%B3%E9%BC%A0%E6%A0%87%E5%8F%B3%E9%94%AE/"/>
+    <url>/2023/06/19/Windows%20Terminal%E6%B7%BB%E5%8A%A0%E8%87%B3%E9%BC%A0%E6%A0%87%E5%8F%B3%E9%94%AE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Windows-Terminal添加至鼠标右键"><a href="#Windows-Terminal添加至鼠标右键" class="headerlink" title="Windows Terminal添加至鼠标右键"></a>Windows Terminal添加至鼠标右键</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>在<code>Microsoft Store</code>中即可下载。</p><p><img src="/image/Windows%20Terminal%E6%B7%BB%E5%8A%A0%E8%87%B3%E9%BC%A0%E6%A0%87%E5%8F%B3%E9%94%AE/image-20230619110413661.png" alt="image-20230619110413661"></p><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="在鼠标右键打开"><a href="#在鼠标右键打开" class="headerlink" title="在鼠标右键打开"></a>在鼠标右键打开</h3><h4 id="下载Terminal图标"><a href="#下载Terminal图标" class="headerlink" title="下载Terminal图标"></a>下载Terminal图标</h4><p>图标地址:<a href="https://raw.githubusercontent.com/microsoft/terminal/master/res/terminal.ico">https://raw.githubusercontent.com/microsoft/terminal/master/res/terminal.ico</a></p><p>下载后保存在某个文件夹<code>path</code></p><h4 id="添加到鼠标右键"><a href="#添加到鼠标右键" class="headerlink" title="添加到鼠标右键"></a>添加到鼠标右键</h4><h5 id="批处理修改注册表"><a href="#批处理修改注册表" class="headerlink" title="批处理修改注册表"></a>批处理修改注册表</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">@<span class="hljs-built_in">echo</span> off<br>reg.exe add <span class="hljs-string">&quot;HKEY_CLASSES_ROOT\Directory\Background\shell\wt&quot;</span> /f /ve /d <span class="hljs-string">&quot;Windows Terminal here&quot;</span><br>reg.exe add <span class="hljs-string">&quot;HKEY_CLASSES_ROOT\Directory\Background\shell\wt&quot;</span> /f /v <span class="hljs-string">&quot;Icon&quot;</span> /t REG_EXPAND_SZ /d <span class="hljs-string">&quot;path\terminal.ico&quot;</span><br>reg.exe add <span class="hljs-string">&quot;HKEY_CLASSES_ROOT\Directory\Background\shell\wt\command&quot;</span> /f /ve /t REG_EXPAND_SZ /d <span class="hljs-string">&quot;\&quot;%%LOCALAPPDATA%%\Microsoft\WindowsApps\wt.exe\&quot;&quot;</span><br>pause<br></code></pre></td></tr></table></figure><h5 id="手动修改注册表"><a href="#手动修改注册表" class="headerlink" title="手动修改注册表"></a>手动修改注册表</h5><p>按下Win+R快捷键打开运行,然后输入<code>regedit</code>打开<strong>注册表编辑器</strong>,然后在地址栏中输入:</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">计算机\HKEY_CLASSES_ROOT\directory\background\shell<br></code></pre></td></tr></table></figure><p><img src="/image/Windows%20Terminal%E6%B7%BB%E5%8A%A0%E8%87%B3%E9%BC%A0%E6%A0%87%E5%8F%B3%E9%94%AE/image-20230619111056009.png" alt="image-20230619111056009"></p><p>新建<strong>项</strong>:<code>wt</code></p><p><strong>点击</strong>wt，<strong>双击</strong>右边的<strong>默认</strong>，在里面输入鼠标右键选项的名称：<code>Windows Terminal here</code></p><p>右键wt，选择新建字符串，名为为<code>Icon</code>，在里面输入下载好的图标的地址：<code>path\terminal.ico</code></p><p>右键wt，选择新建项,输入command</p><p>然后点击command,双击右边的默认,输入Terminal的地址<code>&quot;%%LOCALAPPDATA%%\Microsoft\WindowsApps\wt.exe\&quot;</code>即可。</p><p><img src="/image/Windows%20Terminal%E6%B7%BB%E5%8A%A0%E8%87%B3%E9%BC%A0%E6%A0%87%E5%8F%B3%E9%94%AE/image-20230619111734537.png" alt="image-20230619111734537"></p><h4 id="在当前目录打开"><a href="#在当前目录打开" class="headerlink" title="在当前目录打开"></a>在当前目录打开</h4><h5 id="打开配置文件"><a href="#打开配置文件" class="headerlink" title="打开配置文件"></a>打开配置文件</h5><p>点击Windows Terminal菜单栏上的<strong>下拉箭头</strong>,然后选择Settings:</p><p><img src="/image/Windows%20Terminal%E6%B7%BB%E5%8A%A0%E8%87%B3%E9%BC%A0%E6%A0%87%E5%8F%B3%E9%94%AE/image-20230619110508615.png" alt="image-20230619110508615"></p><p><img src="/image/Windows%20Terminal%E6%B7%BB%E5%8A%A0%E8%87%B3%E9%BC%A0%E6%A0%87%E5%8F%B3%E9%94%AE/image-20230619112038125.png" alt="image-20230619112038125"></p><h5 id="在当前目录打开-1"><a href="#在当前目录打开-1" class="headerlink" title="在当前目录打开"></a>在当前目录打开</h5><p>在默认打开的终端配置中添加<code>&quot;startingDirectory&quot; : &quot;.&quot;,</code>这个配置即可:</p><p><img src="/image/Windows%20Terminal%E6%B7%BB%E5%8A%A0%E8%87%B3%E9%BC%A0%E6%A0%87%E5%8F%B3%E9%94%AE/image-20230619112140525.png" alt="image-20230619112140525"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Windows Terminal</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Windows Terminal</tag>
+      
+      <tag>工具</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>编译安装调试Linux内核</title>
     <link href="/2023/06/13/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85%E8%B0%83%E8%AF%95Linux%E5%86%85%E6%A0%B8/"/>
     <url>/2023/06/13/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85%E8%B0%83%E8%AF%95Linux%E5%86%85%E6%A0%B8/</url>
