@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/image/cover/cat-8048688_1920.jpg">
 <meta property="article:published_time" content="2023-06-26T09:06:59.000Z">
-<meta property="article:modified_time" content="2023-06-26T09:57:54.489Z">
+<meta property="article:modified_time" content="2023-06-27T11:44:05.587Z">
 <meta property="article:author" content="Eddy">
 <meta property="article:tag" content="LACP">
 <meta property="article:tag" content="链路聚合">
@@ -224,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.4k 字
+          5.1k 字
         
       </span>
     
@@ -235,7 +235,7 @@
         
         
         
-          37 分钟
+          43 分钟
         
       </span>
     
@@ -291,7 +291,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年6月26日 下午
+                    本文最后更新于：2023年6月27日 晚上
                   
                 
               </p>
@@ -327,7 +327,12 @@
 <h3 id="模式五：802-3ad"><a href="#模式五：802-3ad" class="headerlink" title="模式五：802.3ad"></a>模式五：802.3ad</h3><p>mode&#x3D;4，（802.3ad）IEEE 802.3ad Dynamic link aggregation（IEEE 802.3ad 动态链接聚合）</p>
 <ul>
 <li>创建一个聚合组，它们共享同样的速率和双工设定。根据802.3ad规范将多个slave工作在同一个激活的聚合体下。外出流量的slave选择是基于传输hash策略，该策略可以通过<code>xmit_hash_policy</code>选项从缺省的XOR策略改变到其他策略。需要注意的 是，并不是所有的传输策略都是802.3ad适应的，尤其考虑到在802.3ad标准43.2.4章节提及的包乱序问题。不同的实现可能会有不同的适应性。</li>
-<li>必要条件：<br>* 条件1：ethtool支持获取每个slave的速率和双工设定<br>* 条件2：switch(交换机)支持IEEE802.3ad Dynamic link aggregation<br>* 条件3：大多数switch(交换机)需要经过特定配置才能支持802.3ad模式</li>
+<li>必要条件：<ul>
+<li>条件1：ethtool支持获取每个slave的速率和双工设定</li>
+<li>条件2：switch(交换机)支持IEEE802.3ad Dynamic link aggregation</li>
+<li>条件3：大多数switch(交换机)需要经过特定配置才能支持802.3ad模式</li>
+</ul>
+</li>
 </ul>
 <h3 id="模式六：balance-tlb-适配器传输负载均衡"><a href="#模式六：balance-tlb-适配器传输负载均衡" class="headerlink" title="模式六：balance-tlb 适配器传输负载均衡"></a>模式六：balance-tlb 适配器传输负载均衡</h3><p>mode&#x3D;5，（balance-tlb）Adaptive transmit load balancing（适配器传输负载均衡）</p>
 <ul>
@@ -345,6 +350,9 @@
 </ul>
 </li>
 </ul>
+<h2 id="Linux配置Bonding模式"><a href="#Linux配置Bonding模式" class="headerlink" title="Linux配置Bonding模式"></a>Linux配置Bonding模式</h2><p><code>/etc/netplan/bond-config.yaml</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">network:<br>  version: 2<br>  ethernets:<br>    ens4f0np0:<br>      addresses: []<br>      dhcp4: no<br>      optional: <span class="hljs-literal">true</span><br>    ens4f1np1:<br>      addresses: []<br>      dhcp4: no<br>      optional: <span class="hljs-literal">true</span><br>  bonds:<br>    bond0:<br>      interfaces:<br>        - ens4f0np0<br>        - ens4f1np1<br>      parameters:<br>        mode: 802.3ad<br>        mii-monitor-interval: 100<br>      addresses:<br>        - <span class="hljs-string">&quot;192.168.12.5/24&quot;</span><br>      gateway4: <span class="hljs-string">&quot;192.168.12.1&quot;</span><br></code></pre></td></tr></table></figure>
+
 <h2 id="交换机链路聚合（Link-Aggregation，LA）"><a href="#交换机链路聚合（Link-Aggregation，LA）" class="headerlink" title="交换机链路聚合（Link Aggregation，LA）"></a>交换机链路聚合（Link Aggregation，LA）</h2><h3 id="Link-Aggregation"><a href="#Link-Aggregation" class="headerlink" title="Link Aggregation"></a><strong>Link Aggregation</strong></h3><p>不同厂商的交换机在端口聚合（Port Aggregation，PA）方面使用不同的术语。例如，Cisco使用EtherChannel，Brocade使用Brocade LAG，而IEEE 802.3ad LACP（Link Aggregation Control Protocol）则是一种基于标准的协议，它在2008年被转入IEEE 802.1ax标准中。LACP可以动态配置端口聚合，而且不依赖于任何特定的厂商，因此大多数以太网交换机都支持该协议。这些实现的目标都是一致的，即将两个或多个端口绑定在一起，作为一个高带宽的逻辑端口，以提高链路速度、冗余性、弹性和负载均衡性。</p>
 <p>从技术上来说，我们可以在交换机之间使用多个端口创建并行的trunk链路，但生成树协议（STP）会将其视为环路，并关闭所有可能造成环路的链接。而端口聚合则生成一个单一的逻辑链路，不会导致环路问题，并可以作为Access Port（连接主机）或Trunk Port（承载多个VLAN流量）使用。</p>
 <h3 id="Link-Aggregation-Control-Protocol-LACP"><a href="#Link-Aggregation-Control-Protocol-LACP" class="headerlink" title="Link Aggregation Control Protocol (LACP)"></a><strong>Link Aggregation Control Protocol (LACP)</strong></h3><p>LACP 是通过向所有启用LACP协议的链路发送LACPDU Frame来工作的，如果发现链路另一端的设备也启用了LACP，LACP将独自在同一条链路上发送Frame，使得两者能够发现它们之间的多条链路，并将它们合并成单条逻辑链路。</p>
@@ -396,8 +404,16 @@
 <td>无特殊配置</td>
 </tr>
 </tbody></table>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://docs.nvidia.com/networking/pages/viewpage.action?pageId=19812499">Link Aggregation Group (LAG) - Onyx v3.8.2110 - NVIDIA Networking Docs</a> mellanox交换机链路聚合配置方式。</p>
-<p><a target="_blank" rel="noopener" href="https://docs.nvidia.com/networking/m/view-rendered-page.action?abstractPageId=19812159">BlueField Link Aggregation - NVIDIA Networking Docs — BlueField Link Aggregation - NVIDIA Networking Docs</a> mellanox网卡链路聚合配置方式。</p>
+<h2 id="Mellanox交换机配置链路聚合"><a href="#Mellanox交换机配置链路聚合" class="headerlink" title="Mellanox交换机配置链路聚合"></a>Mellanox交换机配置链路聚合</h2><p><img src="/image/%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/image-20230627190550381.png" srcset="/img/loading.gif" lazyload alt="image-20230627190550381"></p>
+<center>链路聚合连接示意图</center>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#登陆</span><br><span class="hljs-built_in">enable</span><br>config t<br><br>interface port-channel 1<br><span class="hljs-built_in">exit</span><br>lacp<br><br>interface ethernet 1/8<br>channel-group 1 mode active<br><span class="hljs-built_in">exit</span><br><br>interface ethernet 1/7<br>channel-group 1 mode active<br><span class="hljs-built_in">exit</span><br><br>interface port-channel 2<br><span class="hljs-built_in">exit</span><br>lacp<br><br>interface ethernet 1/1<br>channel-group 2 mode active<br><span class="hljs-built_in">exit</span><br>interface ethernet 1/2<br>channel-group 2 mode active<br></code></pre></td></tr></table></figure>
+
+
+
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://docs.nvidia.com/networking/pages/viewpage.action?pageId=19812499">Link Aggregation Group (LAG) - Onyx v3.8.2110 - NVIDIA Networking Docs</a> Mellanox交换机链路聚合配置方式。</p>
+<p><a target="_blank" rel="noopener" href="https://docs.nvidia.com/networking/m/view-rendered-page.action?abstractPageId=19812159">BlueField Link Aggregation - NVIDIA Networking Docs — BlueField Link Aggregation - NVIDIA Networking Docs</a> Mellanox网卡链路聚合配置方式。</p>
+<p><a target="_blank" rel="noopener" href="https://enterprise-support.nvidia.com/s/article/howto-configure-lacp-on-mellanox-switches">HowTo Configure LACP on Mellanox Switches (nvidia.com)</a> Mellanox交换机链路聚合配置示例。</p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/sammyliu/articles/4894991.html">以太网链路聚合控制协议（LACP）（链路聚合控制协议：将多个端口虚机成一个逻辑端口来提高链路速度， Active&#x2F;Active 模式） - SammyLiu - 博客园 (cnblogs.com)</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/syuee/p/14604221.html">linux网卡聚合及链路聚合 - 白色的番茄 - 博客园 (cnblogs.com)</a></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/115163338">交换机链路聚合与Linux的bond模式对照 - 知乎 (zhihu.com)</a></p>
