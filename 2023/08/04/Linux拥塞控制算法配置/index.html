@@ -16,24 +16,25 @@
   <meta name="author" content="Eddy">
   <meta name="keywords" content="">
   
-    <meta name="description" content="[Infiniband1.3中文手册]IB Specification Vol 1-Release-1.3-2015-03-03 作者：NGDCN网址：http:&#x2F;&#x2F;ngdcn.com  【Infiniband手册】第3章：架构预览 - NGDCN 【Infiniband手册】第4章：寻址&#x2F;Addressing - NGDCN 【Infiniband手册】第5章：数据报文格式 - NGD">
+    <meta name="description" content="Linux拥塞控制算法配置在Linux用户态可以通过参数查看当前使用的拥塞控制算法、当前可支持的拥塞控制算法。如下表所示是两个参数以及含义。    参数 含义    net.ipv4.tcp_congestion_control 当前运行的拥塞控制算法   net.ipv4.tcp_available_congestion_control 当前可支持的拥塞控制算法   1234#查看当前运行的拥塞">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RDMA学习资源快速检索目录">
-<meta property="og:url" content="http://example.com/2023/07/17/RDMA%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E5%BF%AB%E9%80%9F%E6%A3%80%E7%B4%A2%E7%9B%AE%E5%BD%95/index.html">
+<meta property="og:title" content="Linux拥塞控制算法配置">
+<meta property="og:url" content="http://example.com/2023/08/04/Linux%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6%E7%AE%97%E6%B3%95%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="凛冬将至">
-<meta property="og:description" content="[Infiniband1.3中文手册]IB Specification Vol 1-Release-1.3-2015-03-03 作者：NGDCN网址：http:&#x2F;&#x2F;ngdcn.com  【Infiniband手册】第3章：架构预览 - NGDCN 【Infiniband手册】第4章：寻址&#x2F;Addressing - NGDCN 【Infiniband手册】第5章：数据报文格式 - NGD">
+<meta property="og:description" content="Linux拥塞控制算法配置在Linux用户态可以通过参数查看当前使用的拥塞控制算法、当前可支持的拥塞控制算法。如下表所示是两个参数以及含义。    参数 含义    net.ipv4.tcp_congestion_control 当前运行的拥塞控制算法   net.ipv4.tcp_available_congestion_control 当前可支持的拥塞控制算法   1234#查看当前运行的拥塞">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/image/cover/pexels-riccardo-307008.jpg">
-<meta property="article:published_time" content="2023-07-17T05:54:26.000Z">
-<meta property="article:modified_time" content="2023-07-17T05:55:35.756Z">
+<meta property="og:image" content="http://example.com/image/cover/pexels-pixabay-163210.jpg">
+<meta property="article:published_time" content="2023-08-04T01:55:39.000Z">
+<meta property="article:modified_time" content="2023-08-04T02:02:36.706Z">
 <meta property="article:author" content="Eddy">
-<meta property="article:tag" content="RDMA">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="拥塞控制">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/image/cover/pexels-riccardo-307008.jpg">
+<meta name="twitter:image" content="http://example.com/image/cover/pexels-pixabay-163210.jpg">
   
   
   
-  <title>RDMA学习资源快速检索目录 - 凛冬将至</title>
+  <title>Linux拥塞控制算法配置 - 凛冬将至</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="RDMA学习资源快速检索目录"></span>
+            <span id="subtitle" data-typed-text="Linux拥塞控制算法配置"></span>
           
         </div>
 
@@ -210,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-07-17 13:54" pubdate>
-          2023年7月17日 下午
+        <time datetime="2023-08-04 09:55" pubdate>
+          2023年8月4日 上午
         </time>
       </span>
     
@@ -222,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.9k 字
+          725 字
         
       </span>
     
@@ -233,7 +234,7 @@
         
         
         
-          17 分钟
+          7 分钟
         
       </span>
     
@@ -284,12 +285,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">RDMA学习资源快速检索目录</h1>
+            <h1 style="display: none">Linux拥塞控制算法配置</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年7月17日 下午
+                    本文最后更新于：2023年8月4日 上午
                   
                 
               </p>
@@ -297,63 +298,32 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Infiniband1-3中文手册-IB-Specification-Vol-1-Release-1-3-2015-03-03"><a href="#Infiniband1-3中文手册-IB-Specification-Vol-1-Release-1-3-2015-03-03" class="headerlink" title="[Infiniband1.3中文手册]IB Specification Vol 1-Release-1.3-2015-03-03"></a>[Infiniband1.3中文手册]IB Specification Vol 1-Release-1.3-2015-03-03</h1><blockquote>
-<p>作者：NGDCN<br>网址：<a target="_blank" rel="noopener" href="http://ngdcn.com/">http://ngdcn.com</a></p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://ngdcn.com/post/94.html">【Infiniband手册】第3章：架构预览 - NGDCN</a></p>
-<p><a target="_blank" rel="noopener" href="https://ngdcn.com/post/96.html">【Infiniband手册】第4章：寻址&#x2F;Addressing - NGDCN</a></p>
-<p><a target="_blank" rel="noopener" href="https://ngdcn.com/post/97.html">【Infiniband手册】第5章：数据报文格式 - NGDCN</a></p>
-<p><a target="_blank" rel="noopener" href="https://ngdcn.com/post/97.html">【Infiniband手册】第5章：数据报文格式 - NGDCN</a></p>
-<p><a target="_blank" rel="noopener" href="https://ngdcn.com/post/104.html">【Infiniband手册】第6章：物理层接口 - NGDCN</a></p>
-<p><a target="_blank" rel="noopener" href="https://ngdcn.com/post/105.html">【Infiniband手册】第7章：链路层 - NGDCN</a></p>
-<p><a target="_blank" rel="noopener" href="https://ngdcn.com/post/106.html">【Infiniband手册】第8章：网络层 - NGDCN</a></p>
-<p><a target="_blank" rel="noopener" href="https://ngdcn.com/post/107.html">【Infiniband手册】第9章：传输层 - NGDCN</a></p>
-<p><a target="_blank" rel="noopener" href="https://ngdcn.com/post/148.html">【Infiniband手册】第10章：软件传输接口 - NGDCN</a></p>
-<h1 id="知乎大神Savir的RDMA系列"><a href="#知乎大神Savir的RDMA系列" class="headerlink" title="知乎大神Savir的RDMA系列"></a>知乎大神<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/saviour-li">Savir</a>的RDMA系列</h1><blockquote>
-<p>作者：Savir</p>
-<p>网址：<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/saviour-li">Savir - 知乎 (zhihu.com)</a></p>
-<p>专栏：<a target="_blank" rel="noopener" href="https://www.zhihu.com/column/c_1231181516811390976">RDMA杂谈 - 知乎 (zhihu.com)</a></p>
-</blockquote>
-<h2 id="专栏"><a href="#专栏" class="headerlink" title="专栏"></a>专栏</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/164908617">0. 《RDMA杂谈》专栏索引 - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/138874738">1. RDMA概述 - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/139548242">2. 比较基于传统以太网与RDMA技术的通信 - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/141267386">3. RDMA基本元素 - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/142175657">4. RDMA操作类型 - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/144099636">5. RDMA基本服务类型 - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/156975042">6. RDMA之Memory Region - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/159493100">7. RDMA之Protection Domain - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/163552044">8. RDMA之Address Handle - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/195757767">9. RDMA之Queue Pair - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/259650980">10. RDMA之Completion Queue - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/279904125">11. RDMA之Shared Receive Queue - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/329198771">12. RDMA之Verbs - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/346708569">13. RDMA之用户态与内核态交互 - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/353590347">14. RDMA之Memory Window - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/361740115">15. RDMA之RoCE &amp; Soft-RoCE - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/408817872">16. RDMA之DDP(Direct Data Placement) - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/421211722">17. RDMA之RDMAP(Remote Direct Memory Access Protocol) - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/435467605">18. RDMA之MPA(Marker PDU Aligned framing) - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/455174484">20. RDMA之Pyverbs(Python Verbs) - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/463199854">21. RDMA之内存地址基础知识 - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/476407641">22. RDMA之基于Socket API的QP间建链 - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/494826608">23. RDMA之基于CM API的QP间建链 - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/565736840">24. RDMA之Queue Buffer - 知乎 (zhihu.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/642286038">25. RDMA之用户态MR Buffer - 知乎 (zhihu.com)</a></p>
-<h1 id="CSDN大神bandaoyu的RDMA专栏"><a href="#CSDN大神bandaoyu的RDMA专栏" class="headerlink" title="CSDN大神bandaoyu的RDMA专栏"></a>CSDN大神<a target="_blank" rel="noopener" href="https://blog.csdn.net/bandaoyu?type=blog">bandaoyu</a>的<a target="_blank" rel="noopener" href="https://blog.csdn.net/bandaoyu/category_11340014.html">RDMA</a>专栏</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/bandaoyu/article/details/120485737">【RDMA】RDMA 学习资料总目录_rdma开发 书_bandaoyu的博客-CSDN博客</a></p>
-<h2 id="RDMA专栏"><a href="#RDMA专栏" class="headerlink" title="RDMA专栏"></a>RDMA专栏</h2><p>专栏 <a target="_blank" rel="noopener" href="https://blog.csdn.net/bandaoyu/category_11340014.html">RDMA_bandaoyu的博客-CSDN博客</a></p>
-<p><strong>RDMA技术详解</strong></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/bandaoyu/article/details/112859853">【RDMA】技术详解（一）：RDMA概述_bandaoyu的博客-CSDN博客</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/bandaoyu/article/details/112859932">【RDMA】技术详解（二）：Send Receive操作_ibv_send_recv_bandaoyu的博客-CSDN博客</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/bandaoyu/article/details/112859981">【RDMA】技术详解（三）：理解RDMA Scatter Gather List|聚散表_bandaoyu的博客-CSDN博客</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/bandaoyu/article/details/112860396">【RDMA】技术详解（四）：RDMA之Verbs和编程步骤_ibv_qp_init_attr_bandaoyu的博客-CSDN博客</a></p>
-<h2 id="网络专栏"><a href="#网络专栏" class="headerlink" title="网络专栏"></a>网络专栏</h2><p>专栏 <a target="_blank" rel="noopener" href="https://blog.csdn.net/bandaoyu/category_8400071.html">网络编程_bandaoyu的博客-CSDN博客</a></p>
-<h1 id="论坛"><a href="#论坛" class="headerlink" title="论坛"></a>论坛</h1><p><a target="_blank" rel="noopener" href="https://ngdcn.com/">NGDCN - 未来网络技术网</a></p>
-<h1 id="博客"><a href="#博客" class="headerlink" title="博客"></a>博客</h1><p><a target="_blank" rel="noopener" href="http://www.rdmamojo.com/">RDMAmojo - RDMAmojo - blog on RDMA technology and programming by Dotan Barak RDMAmojo</a></p>
-<h1 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h1><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=NumH5YeVjHU">(23) The Linux SoftRoCE Driver - YouTube</a> OFA组织2017年年会时对于Soft-RoCE实现的介绍视频</p>
-<h1 id="书籍"><a href="#书籍" class="headerlink" title="书籍"></a>书籍</h1><p><a target="_blank" rel="noopener" href="https://book.douban.com/subject/36322557/">《Linux高性能网络详解：从DPDK、RDMA到XDP》</a></p>
-<h1 id="编程"><a href="#编程" class="headerlink" title="编程"></a>编程</h1><p>RDMA编程入门可参考的项目：</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/tarickb/the-geek-in-the-corner">https://github.com/tarickb/the-geek-in-the-corner</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/jcxue/RDMA-Tutorial">https://github.com/jcxue/RDMA-Tutorial</a></p>
+                <h1 id="Linux拥塞控制算法配置"><a href="#Linux拥塞控制算法配置" class="headerlink" title="Linux拥塞控制算法配置"></a>Linux拥塞控制算法配置</h1><p>在Linux用户态可以<strong>通过参数查看当前使用的拥塞控制算法、当前可支持的拥塞控制算法</strong>。如下表所示是两个参数以及含义。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>net.ipv4.tcp_congestion_control</td>
+<td>当前运行的拥塞控制算法</td>
+</tr>
+<tr>
+<td>net.ipv4.tcp_available_congestion_control</td>
+<td>当前可支持的拥塞控制算法</td>
+</tr>
+</tbody></table>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#查看当前运行的拥塞控制算法</span><br>$ sysctl net.ipv4.tcp_congestion_control<br><span class="hljs-comment">#查看当前可支持的拥塞控制算法</span><br>$ sysctl net.ipv4.tcp_available_congestion_control<br></code></pre></td></tr></table></figure>
+
+<h2 id="查看Linux系统中所有已实现的拥塞控制算法模块："><a href="#查看Linux系统中所有已实现的拥塞控制算法模块：" class="headerlink" title="查看Linux系统中所有已实现的拥塞控制算法模块："></a>查看Linux系统中所有已实现的拥塞控制算法模块：</h2><p><img src="/image/Linux%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6%E7%AE%97%E6%B3%95%E9%85%8D%E7%BD%AE/image-20230803094446632.png#pic_center" srcset="/img/loading.gif" lazyload alt="image-20230803094446632"></p>
+<h2 id="安装特定拥塞控制算法"><a href="#安装特定拥塞控制算法" class="headerlink" title="安装特定拥塞控制算法"></a>安装特定拥塞控制算法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ modprobe -a tcp_vegas<br></code></pre></td></tr></table></figure>
+
+<h2 id="动态切换拥塞控制算法"><a href="#动态切换拥塞控制算法" class="headerlink" title="动态切换拥塞控制算法"></a>动态切换拥塞控制算法</h2><p>当前使用的拥塞控制算法外<strong>还可以动态切换拥塞控制算法。如下所示将默认的cubic拥塞控制算法切换为bbr拥塞控制算法。</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;net.core.default_qdisc=fq&quot;</span> &gt;&gt; /etc/sysctl.conf<br>$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;net.ipv4.tcp_congestion_control=bbr&quot;</span> &gt;&gt; /etc/sysctl.conf<br>$ sysctl -p<br>kernel.shmmax = 9223372036854775807<br>kernel.shmall = 1152921504606846720<br>net.core.default_qdisc = fq<br>net.ipv4.tcp_congestion_control = bbr<br></code></pre></td></tr></table></figure>
+
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/J_EE4oDxP7MmD7qlp9hL1w">Linux内核网络-拥塞控制系列(一） (qq.com)</a></p>
 
                 
               </div>
@@ -372,7 +342,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/RDMA/" class="category-chain-item">RDMA</a>
+  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
   
   
 
@@ -387,7 +357,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/RDMA/">#RDMA</a>
+        <a href="/tags/Linux/">#Linux</a>
+      
+        <a href="/tags/%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6/">#拥塞控制</a>
       
     </div>
   
@@ -399,8 +371,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>RDMA学习资源快速检索目录</div>
-      <div>http://example.com/2023/07/17/RDMA学习资源快速检索目录/</div>
+      <div>Linux拥塞控制算法配置</div>
+      <div>http://example.com/2023/08/04/Linux拥塞控制算法配置/</div>
     </div>
     <div class="license-meta">
       
@@ -412,7 +384,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年7月17日</div>
+          <div>2023年8月4日</div>
         </div>
       
       
@@ -444,18 +416,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/08/04/Linux%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6%E7%AE%97%E6%B3%95%E9%85%8D%E7%BD%AE/" title="Linux拥塞控制算法配置">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Linux拥塞控制算法配置</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/07/15/IBA%E5%8A%9F%E8%83%BD/" title="IBA功能">
-                        <span class="hidden-mobile">IBA功能</span>
+                      <a href="/2023/07/17/RDMA%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E5%BF%AB%E9%80%9F%E6%A3%80%E7%B4%A2%E7%9B%AE%E5%BD%95/" title="RDMA学习资源快速检索目录">
+                        <span class="hidden-mobile">RDMA学习资源快速检索目录</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
