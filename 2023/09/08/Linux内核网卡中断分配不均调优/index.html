@@ -16,24 +16,24 @@
   <meta name="author" content="Eddy">
   <meta name="keywords" content="">
   
-    <meta name="description" content="rxe_cfgrxe_cfg 是一个用于配置和管理 RXE（RDMA over Converged Ethernet）实例的命令行工具。 概述12345678$ rxe_cfg [status]					显示可用的以太网设备和配置的 RXE 实例的信息。$ rxe_cfg start [-p proto]			加载 RXE 模块并配置任何持久实例。$ rxe_cfg stop						取消配置所">
+    <meta name="description" content="Linux内核网卡中断分配不均衡调优查看CPU具体中断情况&#x2F;proc&#x2F;interrupts 文件中可以看到各个 CPU 上的中断情况。 1234567cat &#x2F;proc&#x2F;interrupts# 持续查看watch -d cat &#x2F;proc&#x2F;interrupts# 持续查看并检索watch -n 1 &amp;#x27;egrep &quot;CPU|ens33&quot; &#x2F;proc&#x2F;interrupts">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux命令-rxe_cfg">
-<meta property="og:url" content="http://example.com/2023/09/07/Linux%E5%91%BD%E4%BB%A4-rxe_cfg/index.html">
+<meta property="og:title" content="Linux内核网卡中断分配不均调优">
+<meta property="og:url" content="http://example.com/2023/09/08/Linux%E5%86%85%E6%A0%B8%E7%BD%91%E5%8D%A1%E4%B8%AD%E6%96%AD%E5%88%86%E9%85%8D%E4%B8%8D%E5%9D%87%E8%B0%83%E4%BC%98/index.html">
 <meta property="og:site_name" content="凛冬将至">
-<meta property="og:description" content="rxe_cfgrxe_cfg 是一个用于配置和管理 RXE（RDMA over Converged Ethernet）实例的命令行工具。 概述12345678$ rxe_cfg [status]					显示可用的以太网设备和配置的 RXE 实例的信息。$ rxe_cfg start [-p proto]			加载 RXE 模块并配置任何持久实例。$ rxe_cfg stop						取消配置所">
+<meta property="og:description" content="Linux内核网卡中断分配不均衡调优查看CPU具体中断情况&#x2F;proc&#x2F;interrupts 文件中可以看到各个 CPU 上的中断情况。 1234567cat &#x2F;proc&#x2F;interrupts# 持续查看watch -d cat &#x2F;proc&#x2F;interrupts# 持续查看并检索watch -n 1 &amp;#x27;egrep &quot;CPU|ens33&quot; &#x2F;proc&#x2F;interrupts">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/image/cover/dandelion-8010882_1920.jpg">
-<meta property="article:published_time" content="2023-09-07T03:16:02.000Z">
-<meta property="article:modified_time" content="2023-09-07T03:21:51.128Z">
+<meta property="og:image" content="http://example.com/image/cover/ship-7833921_1280.jpg">
+<meta property="article:published_time" content="2023-09-08T05:44:24.000Z">
+<meta property="article:modified_time" content="2023-09-08T05:50:37.584Z">
 <meta property="article:author" content="Eddy">
-<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Linux网卡中断调优">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/image/cover/dandelion-8010882_1920.jpg">
+<meta name="twitter:image" content="http://example.com/image/cover/ship-7833921_1280.jpg">
   
   
   
-  <title>Linux命令-rxe_cfg - 凛冬将至</title>
+  <title>Linux内核网卡中断分配不均调优 - 凛冬将至</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Linux命令-rxe_cfg"></span>
+            <span id="subtitle" data-typed-text="Linux内核网卡中断分配不均调优"></span>
           
         </div>
 
@@ -210,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-09-07 11:16" pubdate>
-          2023年9月7日 上午
+        <time datetime="2023-09-08 13:44" pubdate>
+          2023年9月8日 下午
         </time>
       </span>
     
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.5k 字
+          3.2k 字
         
       </span>
     
@@ -233,7 +233,7 @@
         
         
         
-          21 分钟
+          27 分钟
         
       </span>
     
@@ -284,12 +284,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Linux命令-rxe_cfg</h1>
+            <h1 style="display: none">Linux内核网卡中断分配不均调优</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年9月7日 上午
+                    本文最后更新于：2023年9月8日 下午
                   
                 
               </p>
@@ -297,38 +297,55 @@
             
               <div class="markdown-body">
                 
-                <h1 id="rxe-cfg"><a href="#rxe-cfg" class="headerlink" title="rxe_cfg"></a>rxe_cfg</h1><p>rxe_cfg 是一个用于配置和管理 RXE（RDMA over Converged Ethernet）实例的命令行工具。</p>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ rxe_cfg [status]					显示可用的以太网设备和配置的 RXE 实例的信息。<br>$ rxe_cfg start [-p proto]			加载 RXE 模块并配置任何持久实例。<br>$ rxe_cfg stop						取消配置所有的 RXE 实例并尝试卸载内核模块。<br>$ rxe_cfg persistent				显示已持久配置的以太网设备列表。<br>$ rxe_cfg add [-n] ethN				在以太网设备 ethN 上配置一个 RXE 实例。<br>$ rxe_cfg remove [-n] ethN|rxeN		移除指定的 RXE 实例。<br>$ rxe_cfg crc <span class="hljs-built_in">enable</span>|<span class="hljs-built_in">disable</span>		启用或禁用 RoCE ICRC计算。<br>$ rxe_cfg mtu [-f] [rxeN] mtu_size	将所有 RXE 设备的 RoCE MTU 设置为 mtu_size。<br></code></pre></td></tr></table></figure>
+                <h1 id="Linux内核网卡中断分配不均衡调优"><a href="#Linux内核网卡中断分配不均衡调优" class="headerlink" title="Linux内核网卡中断分配不均衡调优"></a>Linux内核网卡中断分配不均衡调优</h1><h2 id="查看CPU具体中断情况"><a href="#查看CPU具体中断情况" class="headerlink" title="查看CPU具体中断情况"></a>查看CPU具体中断情况</h2><p><code>/proc/interrupts</code> 文件中可以看到各个 CPU 上的中断情况。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cat</span> /proc/interrupts<br><br><span class="hljs-comment"># 持续查看</span><br>watch -d <span class="hljs-built_in">cat</span> /proc/interrupts<br><br><span class="hljs-comment"># 持续查看并检索</span><br>watch -n 1 <span class="hljs-string">&#x27;egrep &quot;CPU|ens33&quot; /proc/interrupts&#x27;</span><br></code></pre></td></tr></table></figure>
 
-<h2 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">proto<br>	以太类型字段。默认值为0x8915。必须更改此值才能在Mellanox ConnectX适配器上使用RXE。<br>ethN<br>	/sys/class/net 中列出的网络设备名称。 仅支持以太网设备； IE. VLAN 的eth0或eth0.1234。<br>rxeN<br>	/sys/class/infiniband/ 中列出的RXE设备名称。 例如 rxe0 或 rxe1。<br>mtu_size<br>	RoCE mtu。 对于 RoCE，mtu表示不包括标头的有效负载，可能的值有：256、512、1024、2048 和 4096。<br></code></pre></td></tr></table></figure>
+<p><code>/proc/irq/[irq_num]/smp_affinity_list</code> 可以查看指定中断当前绑定的 CPU。</p>
+<p>使用以下命令可查看对应中断绑定的CPU核：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cat</span> /proc/interrupts | grep ens33 | <span class="hljs-built_in">cut</span> -d: -f1 | <span class="hljs-keyword">while</span> <span class="hljs-built_in">read</span> i; <span class="hljs-keyword">do</span> <span class="hljs-built_in">echo</span> -ne irq<span class="hljs-string">&quot;:<span class="hljs-variable">$i</span>\t bind_cpu: &quot;</span>; <span class="hljs-built_in">cat</span> /proc/irq/<span class="hljs-variable">$i</span>/smp_affinity_list; <span class="hljs-keyword">done</span> | <span class="hljs-built_in">sort</span> -n -t<span class="hljs-string">&#x27; &#x27;</span> -k3<br></code></pre></td></tr></table></figure>
 
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs bash">[status]<br>	状态命令打印有关可用以太网设备和配置的 RXE 实例的信息表。 如果未提供任何选项，则状态显示为默	 认值。<br>start [-p proto]<br>	start命令加载 RXE 模块并配置任何持久实例。 如果包含 -p proto 选项，RXE 模块将配置为使用 	 Ethertype = proto。 （这允许在设备上测试 RXE，例如 Mellanox ConnectX，这些设备已经在硬	件中支持默认的 RoCE 以太网类型。）<br>stop<br>	stop 命令取消所有 RXE 实例的配置并尝试卸载内核模块。<br>persistent<br>	显示已持久配置的以太网设备列表。<br>add [-n] ethN<br>	add 命令将在以太网设备 ethN（例如 eth0）上配置 RXE 实例。<br>	RXE 模块必须已通过 rxe_cfg start 加载。<br><br>	默认行为是将 ethN 添加到持久配置文件中，并且下次运行 rxe_cfg start 时将配置相同的 RXE 设	 备。 如果包含 -n 选项，则设备不会添加到持久性文件中。<br>remove [-n] ethN|rxeN<br>	删除命令将删除指定的 RXE 实例。 该参数必须与当前活动的 ethN 或 rxeN 名称匹配。<br><br>	如果包含 -n 选项，RXE 设备将被删除，但不会从持久状态中删除。 因此，下次运行 rxe_cfg start 	 时将重新创建它。<br>mtu [-f] [rxeN] mtu_size<br>	mtu 命令会将所有 RXE 设备的 RoCE MTU 设置为 mtu_size，前提是底层以太网 MTU 足够大。 如	果以太网MTU不够大，RXE将使用适合的最大MTU； 驱动程序会记住请求的 RoCE MTU，并且如果以太网 	   MTU 稍后更改为请求的 MTU，则会增加当前活动的 MTU。<br><br>	如果包含 -f 选项，则基础以太网 MTU 将在必要时增加到最小大小，以适应 RoCE MTU 的大小。<br>	如果指定了 rxeN 实例，则只有该实例才会受到该命令的影响。<br>crc <span class="hljs-built_in">enable</span>|<span class="hljs-built_in">disable</span><br>	crc 命令将启用或禁用 RoCE ICRC 计算。 与硬件 RoCE NIC 通信需要有效的 ICRC，但当 RXE 实	 例与另一个 RXE 实例通信时，禁用 CRC 时性能会更好。<br><br>	此选项对于所有RXE实例都是全局的。<br></code></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">irq:19	 bind_cpu: 3<br></code></pre></td></tr></table></figure>
 
-<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">[PREFIX]/etc/rxe.conf<br>	RXE 配置文件。 包含持久 RXE 实例的列表。 可以通过删除此文件来删除所有持久 RXE 实例（请注意，	  这将在下一个“rxe_cfg start”时生效 - 要删除主动配置的实例，您必须“rxe_cfg stop”）。<br></code></pre></td></tr></table></figure>
+<h3 id="查找对应网卡中断触发情况"><a href="#查找对应网卡中断触发情况" class="headerlink" title="查找对应网卡中断触发情况"></a>查找对应网卡中断触发情况</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cat</span> /proc/interrupts | grep ens33 | <span class="hljs-built_in">tr</span> -s <span class="hljs-string">&#x27; &#x27;</span> <span class="hljs-string">&#x27;\t&#x27;</span>|<span class="hljs-built_in">cut</span> -f 1-15<br></code></pre></td></tr></table></figure>
 
-<h2 id="配置Soft-RoCE"><a href="#配置Soft-RoCE" class="headerlink" title="配置Soft-RoCE"></a>配置Soft-RoCE</h2><p>以 <code>root</code> 用户身份，输入以下命令显示 RXE 的当前配置状态：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ sudo rxe_cfg<br>  Name   Link  Driver  Speed  NMTU  IPv4_addr  RDEV  RMTU<br>  ens33  <span class="hljs-built_in">yes</span>   e1000<br></code></pre></td></tr></table></figure>
+<p>输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">19:	0	8	0	835	IO-APIC	19-fasteoi	ens33<br></code></pre></td></tr></table></figure>
 
-<p>要载入 RXE 内核模块并启动 RXE，以 <code>root</code> 用户身份输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ sudo rxe_cfg start<br>  Name   Link  Driver  Speed  NMTU  IPv4_addr  RDEV  RMTU<br>  ens33  <span class="hljs-built_in">yes</span>   e1000                           rxe0  1024  (3)<br></code></pre></td></tr></table></figure>
+<p>如输出所示，中断的处理大部分被CPU3所处理。</p>
+<h2 id="中断绑定"><a href="#中断绑定" class="headerlink" title="中断绑定"></a>中断绑定</h2><p>中断绑定即设置中断的<code>CPU Affinity</code>，让中断只在指定CPU核心上进行响应。</p>
+<p>Kernel 2.4开始支持把不同的硬件中断请求(IRQ)分配到特定的CPU上，绑定技术被称为<code>SMP IRQ Affinity</code>。</p>
+<h3 id="x2F-proc-x2F-irq-x2F-irq-num-x2F-smp-affinity"><a href="#x2F-proc-x2F-irq-x2F-irq-num-x2F-smp-affinity" class="headerlink" title="&#x2F;proc&#x2F;irq&#x2F;[irq_num]&#x2F;smp_affinity"></a>&#x2F;proc&#x2F;irq&#x2F;[irq_num]&#x2F;smp_affinity</h3><p><code>smp_affinity</code>文件用于存放CPU位掩码（16进制），修改该文件中的值可以改变 CPU 和某中断的亲和性。</p>
+<h4 id="使用CPU列表手动修改网卡各队列中断绑定"><a href="#使用CPU列表手动修改网卡各队列中断绑定" class="headerlink" title="使用CPU列表手动修改网卡各队列中断绑定"></a>使用CPU列表手动修改网卡各队列中断绑定</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;2&quot;</span> &gt; /proc/irq/19/smp_affinity<br></code></pre></td></tr></table></figure>
 
-<p>查看rdma_rxe驱动</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ lsmod |grep rdma_rxe<br>rdma_rxe              118784  0<br>ip6_udp_tunnel         16384  1 rdma_rxe<br>udp_tunnel             16384  1 rdma_rxe<br>ib_uverbs             131072  2 rdma_rxe,rdma_ucm<br>ib_core               307200  8 rdma_cm,rdma_rxe,rpcrdma,iw_cm,ib_iser,rdma_ucm,ib_uverbs,ib_cm<br></code></pre></td></tr></table></figure>
+<h3 id="x2F-proc-x2F-irq-x2F-irq-num-x2F-smp-affinity-list"><a href="#x2F-proc-x2F-irq-x2F-irq-num-x2F-smp-affinity-list" class="headerlink" title="&#x2F;proc&#x2F;irq&#x2F;[irq_num]&#x2F;smp_affinity_list"></a>&#x2F;proc&#x2F;irq&#x2F;[irq_num]&#x2F;smp_affinity_list</h3><p>该文件存放的是 CPU 列表（十进制）。注意，CPU 核心个数用表示编号从 0 开始，如 CPU0, CPU1 等。</p>
+<h4 id="使用CPU列表手动修改网卡各队列中断绑定-1"><a href="#使用CPU列表手动修改网卡各队列中断绑定-1" class="headerlink" title="使用CPU列表手动修改网卡各队列中断绑定"></a>使用CPU列表手动修改网卡各队列中断绑定</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> 2 &gt; /proc/irq/19/smp_affinity_list<br></code></pre></td></tr></table></figure>
 
-<p>在通过以太网接口添加新 RXE 设备之前，应打开对应的接口并分配有有效的 IP 地址。</p>
-<p>添加新的 RXE 设备</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ sudo rxe_cfg -n add ens33<br></code></pre></td></tr></table></figure>
+<p>查询中断分布</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># cat /proc/interrupts | grep ens33</span><br>  19:          0         75          0       2421   IO-APIC   19-fasteoi   ens33<br></code></pre></td></tr></table></figure>
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ sudo rxe_cfg status<br>  Name   Link  Driver  Speed  NMTU  IPv4_addr  RDEV  RMTU<br>  ens33  <span class="hljs-built_in">yes</span>   e1000                           rxe0  1024  (3)<br></code></pre></td></tr></table></figure>
+<h2 id="网络数据处理监控"><a href="#网络数据处理监控" class="headerlink" title="网络数据处理监控"></a>网络数据处理监控</h2><h3 id="x2F-proc-x2F-net-x2F-softnet-stat"><a href="#x2F-proc-x2F-net-x2F-softnet-stat" class="headerlink" title="&#x2F;proc&#x2F;net&#x2F;softnet_stat"></a>&#x2F;proc&#x2F;net&#x2F;softnet_stat</h3><p><code>/proc/net/softnet_stat</code>用于网络数据处理监控。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cat</span> /proc/net/softnet_stat<br>0000002c 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000<br>0000007d 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000<br>0000001e 00000000 00000002 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000<br>00000073 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000<br></code></pre></td></tr></table></figure>
 
-<p>查看设备</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ ibv_devices<br>    device          	   node GUID<br>    ------          	----------------<br>    rxe0            	020c29fffea41f73<br></code></pre></td></tr></table></figure>
+<p><code>/proc/net/softnet_stat</code>的每一行对应一个<code>struct softnet_data</code>数据结构，每个CPU一个，值之间用一个空格分隔，并以十六进制显示。</p>
+<ul>
+<li>第一个值，<code>sd-&gt;processed</code>，是处理的网络帧数。如果您使用以太网绑定，这可能会超过接收到的网络帧总数。有些情况下，以太网绑定驱动程序会触发网络数据重新处理，同一数据包将使 <code>sd-&gt;processed</code> 计数增加不止一次。</li>
+<li>第二个值，<code>sd-&gt;dropped</code>，是因处理队列没有空间而丢弃的网络帧数。稍后再谈。</li>
+<li>第三个值，<code>sd-&gt;time_squeeze</code>，（如我们所见）是 <code>net_rx_action</code> 循环因消耗预算或达到时间限制而终止的次数，但仍然可以完成更多工作。如前所述，增加 <code>budget</code> 可以帮助减少这种情况。</li>
+<li>接下来的 5 个值始终为 0。</li>
+<li>第九个值，<code>sd-&gt;cpu_collision</code>，是在发送数据包尝试获取设备锁时发生冲突的次数。本文讨论的是接收，因此下面不会看到这个统计量。</li>
+<li>第十个值，<code>sd-&gt;received_rps</code>，是唤醒此 CPU 通过处理器间中断处理数据包的次数。</li>
+<li>最后一个值，<code>flow_limit_count</code>，是达到流量限制的次数。流量限制是可选的 <code>Receive Packet Steering</code>功能，稍后会探讨到该特性。</li>
+</ul>
+<h2 id="批量配置中断亲和性"><a href="#批量配置中断亲和性" class="headerlink" title="批量配置中断亲和性"></a>批量配置中断亲和性</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs bash">1 <span class="hljs-comment">#!/bin/bash</span><br> 2<br> <span class="hljs-comment"># nic_queue_name为网卡使用队列的名称</span><br> 3 nic_queue_name=<span class="hljs-variable">$1</span><br> 4 array=($(<span class="hljs-built_in">cat</span> /proc/interrupts | grep <span class="hljs-variable">$nic_queue_name</span> | awk <span class="hljs-string">&#x27;&#123;gsub(/:/, &quot;&quot;, $1); printf &quot;%s%s&quot;, (NR==1 ? &quot;&quot; : &quot; &quot;), $1&#125;&#x27;</span>))<br> 5 array_len=<span class="hljs-variable">$&#123;#array[@]&#125;</span><br> 6<br> 7 <span class="hljs-comment"># 获取CPU核心数</span><br> 8 core_count=$(<span class="hljs-built_in">nproc</span>)<br> 9<br>10 <span class="hljs-comment"># 计算要输出的核心数（0到core_count-1）</span><br>11 output_cores=$(<span class="hljs-built_in">seq</span> 0 $((core_count-<span class="hljs-number">1</span>)))<br>12<br>13 <span class="hljs-comment"># 将输出核心数与数组长度取模，以循环使用</span><br>14 output_cores=(<span class="hljs-variable">$output_cores</span>)<br>15 output_core_count=<span class="hljs-variable">$&#123;#output_cores[@]&#125;</span><br>16<br>17 <span class="hljs-keyword">for</span> ((index=<span class="hljs-number">0</span>; index&lt;array_len; index++)); <span class="hljs-keyword">do</span><br>18   irq=<span class="hljs-string">&quot;<span class="hljs-variable">$&#123;array[index]&#125;</span>&quot;</span><br>19   core=<span class="hljs-string">&quot;<span class="hljs-variable">$&#123;output_cores[index % output_core_count]&#125;</span>&quot;</span><br>20   <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;<span class="hljs-variable">$core</span>&quot;</span> &gt; /proc/irq/<span class="hljs-variable">$irq</span>/smp_affinity_list<br>21 <span class="hljs-keyword">done</span><br></code></pre></td></tr></table></figure>
 
-<p>删除 RXE 设备</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ rxe_cfg remove ens33<br></code></pre></td></tr></table></figure>
-
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://manpages.ubuntu.com/manpages/focal/en/man8/rxe_cfg.8.html">Ubuntu Manpage: rxe_cfg - rxe configuration tool for RXE (Soft RoCE)</a></p>
-<p><a target="_blank" rel="noopener" href="https://access.redhat.com/documentation/zh-cn/red_hat_enterprise_linux/7/html/networking_guide/sec-configuring_soft-_roce">13.3. 配置 Soft-RoCE Red Hat Enterprise Linux 7 | Red Hat Customer Portal</a></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://www.cyningsun.com/04-24-2023/monitoring-and-tuning-the-linux-networking-stack-recv-cn.html#proc-net-dev-%E4%BD%BF%E7%94%A8">译｜Monitoring and Tuning the Linux Networking Stack: Receiving Data (cyningsun.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://leeweir.github.io/posts/irq-not-balance/">关于网卡中断不均衡问题及其解决方案 - Weir’s Note (leeweir.github.io)</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.packagecloud.io/monitoring-tuning-linux-networking-stack-sending-data/">Monitoring and Tuning the Linux Networking Stack: Sending Data | Packagecloud Blog</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.51cto.com/quantfabric/2594344">Linux性能优化（十六）——中断绑定_51CTO博客_linux 中断架构</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/64868">Linux 多核下绑定硬件中断到不同 CPU（IRQ Affinity）-阿里云开发者社区 (aliyun.com)</a></p>
+<p>[<a target="_blank" rel="noopener" href="https://www.eet-china.com/mp/a203948.html">译1]linux网络栈监控及调优：数据接收-电子工程专辑 (eet-china.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://access.redhat.com/documentation/zh-cn/red_hat_enterprise_linux/8/html/monitoring_and_managing_system_status_and_performance/tuning-the-network-performance_monitoring-and-managing-system-status-and-performance">第 34 章 调整网络性能 Red Hat Enterprise Linux 8 | Red Hat Customer Portal</a></p>
 
                 
               </div>
@@ -352,7 +369,7 @@
   
     <span>></span>
     
-  <a href="/categories/Linux/Linux%E5%91%BD%E4%BB%A4/" class="category-chain-item">Linux命令</a>
+  <a href="/categories/Linux/Linux%E8%B0%83%E4%BC%98/" class="category-chain-item">Linux调优</a>
   
   
 
@@ -369,7 +386,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Linux/">#Linux</a>
+        <a href="/tags/Linux%E7%BD%91%E5%8D%A1%E4%B8%AD%E6%96%AD%E8%B0%83%E4%BC%98/">#Linux网卡中断调优</a>
       
     </div>
   
@@ -381,8 +398,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Linux命令-rxe_cfg</div>
-      <div>http://example.com/2023/09/07/Linux命令-rxe_cfg/</div>
+      <div>Linux内核网卡中断分配不均调优</div>
+      <div>http://example.com/2023/09/08/Linux内核网卡中断分配不均调优/</div>
     </div>
     <div class="license-meta">
       
@@ -394,7 +411,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年9月7日</div>
+          <div>2023年9月8日</div>
         </div>
       
       
@@ -426,18 +443,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/09/08/Linux%E5%86%85%E6%A0%B8%E7%BD%91%E5%8D%A1%E4%B8%AD%E6%96%AD%E5%88%86%E9%85%8D%E4%B8%8D%E5%9D%87%E8%B0%83%E4%BC%98/" title="Linux内核网卡中断分配不均调优">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Linux内核网卡中断分配不均调优</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/08/10/Linux%E5%91%BD%E4%BB%A4-ethtool/" title="Linux命令-ethtool">
-                        <span class="hidden-mobile">Linux命令-ethtool</span>
+                      <a href="/2023/09/07/Linux%E5%91%BD%E4%BB%A4-rxe_cfg/" title="Linux命令-rxe_cfg">
+                        <span class="hidden-mobile">Linux命令-rxe_cfg</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
