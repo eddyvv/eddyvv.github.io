@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Hexo文档中插入note提示块</title>
+    <link href="/2023/11/06/Hexo%E6%96%87%E6%A1%A3%E4%B8%AD%E6%8F%92%E5%85%A5note%E6%8F%90%E7%A4%BA%E5%9D%97/"/>
+    <url>/2023/11/06/Hexo%E6%96%87%E6%A1%A3%E4%B8%AD%E6%8F%92%E5%85%A5note%E6%8F%90%E7%A4%BA%E5%9D%97/</url>
+    
+    <content type="html"><![CDATA[<div class="note note-default">            <p>default 提示块标签</p>          </div><div class="note note-primary">            <p>primary 提示块标签</p>          </div><div class="note note-success">            <p>success 提示块标签</p>          </div><div class="note note-info">            <p>info 提示块标签</p>          </div><div class="note note-warning">            <p>warning 提示块标签</p>          </div><div class="note note-danger">            <p>danger 提示块标签</p>          </div><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br>&#123;% note default %&#125;<br>default 提示块标签<br>&#123;% endnote %&#125;<br><br>&#123;% note primary %&#125;<br>primary 提示块标签<br>&#123;% endnote %&#125;<br><br>&#123;% note success %&#125;<br>success 提示块标签<br>&#123;% endnote %&#125;<br><br>&#123;% note info %&#125;<br>info 提示块标签<br>&#123;% endnote %&#125;<br><br>&#123;% note warning %&#125;<br>warning 提示块标签<br>&#123;% endnote %&#125;<br><br>&#123;% note danger %&#125;<br>danger 提示块标签<br>&#123;% endnote %&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>DPDK及其上层应用的安装使用</title>
     <link href="/2023/09/22/DPDK%E5%8F%8A%E5%85%B6%E4%B8%8A%E5%B1%82%E5%BA%94%E7%94%A8%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/"/>
     <url>/2023/09/22/DPDK%E5%8F%8A%E5%85%B6%E4%B8%8A%E5%B1%82%E5%BA%94%E7%94%A8%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</url>
